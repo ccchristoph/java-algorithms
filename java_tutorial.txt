@@ -1,0 +1,19 @@
+Initializing a new array in java with fixed size:
+type name = new type[size];
+name[i] = 4;
+
+Initializing a new ArrayList which is dynamic
+ArrayList<type> name = new ArrayList<>();
+ArrayList<type> name = new ArrayList<>(initial_size);
+name.add(i); // Inserts value i at the end
+name.remove(1); // Removes value at index 1 
+name.add(2, 6); // Inserts '6' at index 2
+
+Initializing a new emtpy linked list in java:
+myLL = new LinkedList()
+
+In graph theory, we often use an array of linkedLists to model the tree. Linked Lists are very efficient for insertion 
+an they don't need resizing or an initial size which makes them a convenient tool if we want to add
+new edges. In the DFS we usually don't need random acces, but rahter in a sequential way.
+
+While Java arrays are fixed in size (the size cannot be modified), an ArrayList allows flexibility by being able to both add and remove elements
