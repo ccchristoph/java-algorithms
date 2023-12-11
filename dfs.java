@@ -68,18 +68,22 @@ class Graph {
         visited[s] = true;
         queue.add(s);
  
+		int step = 1;
         while (queue.size() != 0) {
- 
+			step += 1;
             // Dequeue a vertex from queue and print it
             s = queue.poll();
-            System.out.print(s + " ");
- 
+            // System.out.print(s + " ");
+			System.out.println("Vertex: " + s + "\tLeave:" + step);
             Iterator<Integer> i = adj[s].listIterator();
             while (i.hasNext()) {
                 int n = i.next();
                 if (!visited[n]) {
                     visited[n] = true;
+					step += 1;
+					System.out.println("Vertex: " + n + "\tEnter:" + step);
                     queue.add(n);
+
                 }
             }
         }
@@ -96,14 +100,40 @@ class Graph {
 		// g.addEdge(3, 3);
 		// g.addEdge(3, 2);
 
-		Graph g = new Graph(5);
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(1, 2);
-		g.addEdge(1, 3);
-		g.addEdge(2, 4);
-		g.addEdge(3, 4);
+		// Graph g = new Graph(5);
+		// g.addEdge(0, 1);
+		// g.addEdge(0, 2);
+		// g.addEdge(1, 2);
+		// g.addEdge(1, 3);
+		// g.addEdge(2, 4);
+		// g.addEdge(3, 4);
 
+		// Graph g = new Graph(9);
+
+		// g.addEdge(0, 2);
+		// g.addEdge(0, 5);
+		// g.addEdge(0, 6);
+		// g.addEdge(1, 0);
+		// g.addEdge(2, 3);
+		// g.addEdge(2, 4);
+		// g.addEdge(2, 6);
+		// g.addEdge(2, 7);
+		// g.addEdge(3, 4);
+		// g.addEdge(4, 1);
+		// g.addEdge(6, 1);
+		// g.addEdge(6, 7);
+		// g.addEdge(7, 1);
+		// g.addEdge(7, 4);
+		// g.addEdge(8, 1);
+		// g.addEdge(8, 2);
+		// g.addEdge(8, 6);
+
+		Graph g = new Graph(2);
+
+		g.addEdge(0, 1);
+		g.addEdge(1, 0);
+
+        
 		System.out.println(
 			"\n Following is Depth First Traversal "
 			+ "(starting from vertex 0)");
